@@ -62,9 +62,9 @@ function worldvision_faqs_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'user/%/preguntas-frequentes';
+  $handler->display->display_options['path'] = 'user/%/preguntas-frecuentes';
   $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'Preguntas Frequentes';
+  $handler->display->display_options['menu']['title'] = 'Preguntas Frecuentes';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;

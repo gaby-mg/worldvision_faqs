@@ -60,15 +60,6 @@ function worldvision_faqs_views_default_views() {
     'wv_frequently_asqued_question' => 'wv_frequently_asqued_question',
   );
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'user/%/preguntas-frecuentes';
-  $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'Preguntas Frecuentes';
-  $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
-
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -78,8 +69,14 @@ function worldvision_faqs_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['view_mode'] = 'full';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['block_description'] = 'Private Area FAQs';
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler->display->display_options['path'] = 'user/%/preguntas-frecuentes';
   $translatables['wv_faq_listing'] = array(
     t('Master'),
     t('World Vision FAQs'),
@@ -89,8 +86,9 @@ function worldvision_faqs_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Page'),
     t('Block'),
+    t('Private Area FAQs'),
+    t('Page'),
   );
   $export['wv_faq_listing'] = $view;
 

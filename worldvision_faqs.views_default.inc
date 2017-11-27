@@ -73,10 +73,6 @@ function worldvision_faqs_views_default_views() {
   $handler->display->display_options['row_options']['view_mode'] = 'full';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['block_description'] = 'Private Area FAQs';
-
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page_1');
-  $handler->display->display_options['path'] = 'user/%/preguntas-frecuentes';
   $translatables['wv_faq_listing'] = array(
     t('Master'),
     t('World Vision FAQs'),
@@ -88,7 +84,6 @@ function worldvision_faqs_views_default_views() {
     t('Desc'),
     t('Block'),
     t('Private Area FAQs'),
-    t('Page'),
   );
   $export['wv_faq_listing'] = $view;
 
